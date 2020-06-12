@@ -1,19 +1,20 @@
 public class LeapYear {
-    public static void main(String[] args) {
-        boolean firstYear = 2020;
-        System.out.println(firstYear);
-        int secondYear = 2021;
-        System.out.println(secondYear);
+        int year;
 
-        if (firstYear = false){
-            System.out.printIn("Rok nie jest przestępny");
-        }else if (firstYear%4 = false){
-            System.out.printIn("Rok nie jest przestępny");
-        }else if (firstYear%100 = false){
-            System.out.printIn("Rok nie jest przestępny");
-        }else if (firstYear%400 = false){
-            System.out.printIn("Rok nie jest przestępny");
-        }else(firstYear%4 && firstYear%100 && firstYear%400)
-        System.out.printIn("Rok jest przestępny");
-    }
+        private static boolean isLeap(int year) {
+
+                if (year % 4) {
+                        System.out.println("Rok jest przestępny");
+                } else if (year % 100) {
+                        System.out.println("Rok jest przestępny");
+                } else if (year % 400) {
+                        System.out.println("Rok jest przestępny");
+
+                } else if (year % 4 && year%100) {
+                        //rok podzielny przez 4 i niepodzielny przez 100 jest przestępny
+                        System.out.println("Rok jest przestępny");
+                } else {
+                        System.out.println("Rok nie jest przestępny");
+                }
+        }
 }

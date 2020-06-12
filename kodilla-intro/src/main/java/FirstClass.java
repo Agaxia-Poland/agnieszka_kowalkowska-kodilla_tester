@@ -1,16 +1,22 @@
 public class FirstClass {
     public static void main(String[] args) {
 
-        String head = "Hello from FirstClass!";
-        String sentence = "You are welcome!";
-        String participants = "Number of participants in this course:";
-        int number = 22;
-        boolean areFresh = true;
+        Notebook notebook = new Notebook(600, 1000, 2020, "Asus", true);
+        System.out.println(notebook.weight + " " + notebook.price + " " + notebook.year + " " + notebook.name + " " + notebook.ifSilent);
+        notebook.checkPrice();
+        notebook.checkWeight();
+        notebook.checkYearAndPrice();
 
-        System.out.println(head);
-        System.out.println(sentence);
-        System.out.println(participants);
-        System.out.println(number);
-        System.out.println(areFresh);
+        Notebook heavyNotebook = new Notebook(2000, 1500, 2019, "Dell", true);
+        System.out.println(heavyNotebook.weight + " " + heavyNotebook.price + " " + heavyNotebook.year + " " + heavyNotebook.name + " " + heavyNotebook.ifSilent);
+        heavyNotebook.checkPrice();
+        heavyNotebook.checkWeight();
+        heavyNotebook.checkYearAndPrice();
+
+        Notebook oldNotebook = new Notebook(1600, 500, 2016, "Acer", false);
+        System.out.println(oldNotebook.weight + " " + oldNotebook.price + " " + oldNotebook.year + " " + oldNotebook.name + " " + oldNotebook.ifSilent);
+        oldNotebook.checkPrice();
+        oldNotebook.checkWeight();
+        oldNotebook.checkYearAndPrice();
+                }
     }
-}
