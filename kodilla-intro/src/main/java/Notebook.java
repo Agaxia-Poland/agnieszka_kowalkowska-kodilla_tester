@@ -3,14 +3,14 @@ public class Notebook {
     int price;
     int year;
     String name;
-    boolean ifSilent = true;
+    boolean silent;
 
-    public Notebook(int weight, int price, int year, String name, boolean ifSilent) {
+    public Notebook(int weight, int price, int year, String name, boolean silent) {
         this.weight = weight;
         this.price = price;
         this.year = year;
         this.name = name;
-        this.ifSilent = true;
+        this.silent = silent;
     }
 
     public void checkPrice() {

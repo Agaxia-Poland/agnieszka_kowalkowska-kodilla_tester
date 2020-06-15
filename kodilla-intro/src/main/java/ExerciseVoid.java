@@ -4,7 +4,7 @@ public class ExerciseVoid {
         sumAndDisplay(1, 2);
     }
 
-    void sumAndDisplay(int a, int b) {
+    private static void sumAndDisplay(int a, int b) {
         int result = a + b;
         System.out.println(result);
     }
