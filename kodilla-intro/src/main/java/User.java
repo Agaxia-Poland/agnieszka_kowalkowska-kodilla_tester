@@ -25,7 +25,7 @@ public class User {
 
         public Users(String users) { //konstruktor wyświetlający obiekty
             this.users = users;
-            
+
             User andrew = new User("Andrew", 12);
             User peter = new User("Peter", 22);
             User mary = new User("Mary", 32);
@@ -46,5 +46,6 @@ public class User {
         boolean user;
         System.out.println(user);
     }
+
 
 }
