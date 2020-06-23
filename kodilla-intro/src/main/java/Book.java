@@ -1,4 +1,6 @@
 public class Book {
+    String author;
+    String title;
 
     private String author(){
         String author = "Adam Mickiewicz";
