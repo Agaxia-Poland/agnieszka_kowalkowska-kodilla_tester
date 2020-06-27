@@ -30,5 +30,3 @@ public class User {
 //                age = user + age[i];
 
 }
-
-
