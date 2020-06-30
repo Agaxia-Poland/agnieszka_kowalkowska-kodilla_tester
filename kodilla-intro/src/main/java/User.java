@@ -8,12 +8,12 @@ public class User {
     }
 
     public static void main(String[] args) {
-        User magda = new User("Maria", 30);
-        User ola = new User("Ewa", 57);
-        User emila = new User("Scooby Do", 4);
-        User daniel = new User("Henryk", 32);
+        User maria = new User("Maria", 30);
+        User ewa = new User("Ewa", 57);
+        User scooby = new User("Scooby", 4);
+        User henryk = new User("Henryk", 32);
 
-        User[] users = {magda, ola, emila, daniel};
+        User[] users = {maria, ewa, scooby, henryk};
 
         int result = 0;
         double average;
