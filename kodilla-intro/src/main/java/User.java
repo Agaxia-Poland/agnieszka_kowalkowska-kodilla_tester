@@ -33,9 +33,3 @@ public class User {
     }
 }
 
-
-//            int age = 0; //suma i średnia wieku użytkowników
-//            for (int i = 0; i < users.length; i++) {
-//                age = user + age[i];
-
-}
