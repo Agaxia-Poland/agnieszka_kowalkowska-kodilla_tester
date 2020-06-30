@@ -1,29 +1,38 @@
+import java.util.Scanner;
+
 public class InstrukcjaWarunkowaSwitch {
     public enum Switch {
         B, /* Black */
-        G /* Green */,
+        G, /* Green */
         R, /* Red */
-        W /* White */
+        W, /* White */
         }
 
     public static void main(String[] args) {
-
-        Switch myColour = Switch.B;
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Write first letter of colour: R - red, W - white, B - black, G - green:");
+            String colour = scanner.nextLine().trim().toUpperCase();
+            Switch myColour = Switch.R;
 
             switch(myColour) {
-                case R:
-                    System.out.println("Red");
-                    break;
-                case W:
-                    System.out.println("White");
-                    break;
-                case B:
+               case R:
+                  System.out.println("Red");
+                        break;
+               case W:
+                   System.out.println("White");
+                        break;
+               case B:
                     System.out.println("Black");
-                    break;
-                case G:
+                        break;
+               case G:
                     System.out.println("Green");
-                    break;
+                        break;
+                default:
+                    System.out.println("Wrong letter. Try again.");
+            }
         }
 
     }
+
 }
