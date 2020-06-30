@@ -1,26 +1,25 @@
 public class Book {
-    String author;
-    String title;
 
-    private String author(){
-        String author = "Adam Mickiewicz";
-        return author;
+    private String author;
+    private String title;
+
+    private Book(String author, String title) {
+        this.author = author;
+        this.title = title;
     }
 
-    private String title(){
-        String title = "Pan Tadeusz";
-        return title;
+    @Override
+    public String toString() {
+        return this.author + " - " + this.title;
     }
 
     public static void main(String[] args) {
-        Book book = Book.of("Adam Mickiewicz", "TPan Tadeusz");
+        Book book = Book.of("Henryk Sienkiewicz", "Ogniem i mieczem");
         System.out.println(book);
     }
 
-    private static Book of(String adam_mickiewicz, String tPan_tadeusz) {
-        String author = null;
-        String title;
-        return (null);
+    private static Book of(String author, String title) {
+        return new Book(author, title);
     }
 
 }
