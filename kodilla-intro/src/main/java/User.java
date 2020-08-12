@@ -10,26 +10,49 @@ public class User {
     public static void main(String[] args) {
         User maria = new User("Maria", 30);
         User ewa = new User("Ewa", 57);
-        User scooby = new User("Scooby", 4);
+        User stefan = new User("Stefan", 4);
         User henryk = new User("Henryk", 32);
 
-        User[] users = {maria, ewa, scooby, henryk};
+        User[] users = {maria, ewa, stefan, henryk};
+        printAll(users);
 
-        int result = 0;
-        double average;
-        int userNumber = users.length;
+        double avg = average(users);                //zmienna średnia wieku
+
+        System.out.println("Średnia wieku : " + avg);
+
+        printYounger(users, avg);
+
+
+    }
+
+    private static double average(User[] users) { // liczymy średnią wieku uzytkownikow
+        double sum = 0;
         for (User user : users) {
-            result = result + user.age;
+            sum = sum + user.getAge();
         }
-        average = result / users.length;
+        return sum / users.length;
+    }
 
+    private static void printYounger(User[] users, double avg) {
         for (User user : users) {
-            if (user.age < average) {
-                System.out.println(user.name);
-            } else {
-                System.out.println("Nobody");
+            if (user.getAge() < avg) {
+                System.out.println(user.getName());
             }
         }
     }
-}
 
+    public int getAge() {   //gettery:wiek i imię
+        return age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    private static void printAll(User[] users) {
+        for (User user : users) {
+            System.out.println(user.getName() + " : " + user.getAge());
+        }
+    }
+
+}
