@@ -5,8 +5,13 @@ public class Doctor extends Job {
     private static final String Peter = "Peter";
 
     public Doctor() {
-        super (Peter, 30, doctor, 6000, 20);
+        super(Peter, 30, doctor, 6000, 20);
     }
+
+    // public Doctor(String name, int age, String doctor, int salary, int responsibilities) {
+    // super(name, age, doctor, salary, responsibilities);
+    // }
+
 
     @Override
     public void giveName() {

@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class User {
     final String name;
     final int age;
@@ -7,23 +9,9 @@ public class User {
         this.age = age;
     }
 
-    public static void main(String[] args) {
-        User maria = new User("Maria", 30);
-        User ewa = new User("Ewa", 57);
-        User stefan = new User("Stefan", 4);
-        User henryk = new User("Henryk", 32);
-
-        User[] users = {maria, ewa, stefan, henryk};
-        printAll(users);
-
-        double avg = average(users);                //zmienna średnia wieku
-
-        System.out.println("Średnia wieku : " + avg);
-
-        printYounger(users, avg);
 
 
-    }
+
 
     private static double average(User[] users) { // liczymy średnią wieku uzytkownikow
         double sum = 0;
@@ -49,10 +37,33 @@ public class User {
         return name;
     }
 
+
+    public static void main(String[] args) {
+
+        User[] users = init(4);
+        printAll(users);
+
+        double avg = average(users);                //zmienna średnia wieku
+
+        System.out.println("Średnia wieku : " + avg);
+
+        printYounger(users, avg);
+
+
+    }
+
+    private static User[] init(int size) {   //private static User[] init() - inicjującą tablicę userów (to co jest w liniach 13-18 de facto)
+        Random random = new Random();
+        User[] users = new User[size];
+        for (int i = 0; i < size; i++) {
+            users[i] = new User("user" + i, random.nextInt(100));  // losujemy wiek
+        }
+        return users;
+    }
+
     private static void printAll(User[] users) {
         for (User user : users) {
             System.out.println(user.getName() + " : " + user.getAge());
         }
     }
-
 }
