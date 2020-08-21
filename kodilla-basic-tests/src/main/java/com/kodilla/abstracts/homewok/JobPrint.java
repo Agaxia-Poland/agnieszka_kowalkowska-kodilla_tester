@@ -4,5 +4,4 @@ import com.kodilla.abstracts.Animal;
 
 public class JobPrint {
 
-
 }

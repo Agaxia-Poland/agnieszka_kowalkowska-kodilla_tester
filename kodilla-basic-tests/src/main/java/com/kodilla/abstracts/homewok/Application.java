@@ -3,6 +3,7 @@ package com.kodilla.abstracts.homewok;
 public class Application {
 
     public static void main(String[] args) {
+
         Shape square = new Square(2.5);
         System.out.println("Square with side 2.5 has area " + square.getSurface());
         System.out.println("Square with side 2.5 has circumference " + square.getCircumference());
@@ -14,5 +15,6 @@ public class Application {
         Shape circle = new Circle(3);
         System.out.println("Circle with radius 3 has area " + circle.getSurface());
         System.out.println("Circle with radius 3 has circumference " + circle.getCircumference());
+
     }
 }
