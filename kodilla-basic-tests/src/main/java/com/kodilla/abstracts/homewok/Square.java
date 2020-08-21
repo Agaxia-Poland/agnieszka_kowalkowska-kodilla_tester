@@ -2,17 +2,20 @@ package com.kodilla.abstracts.homewok;
 
 public class Square extends Shape {
 
-    public Square() {
-        super (5, 5);
+    private double side;
+
+    public Square(double side) {
+        this.side = side;
     }
 
     @Override
-    public void giveSurfaceArea () {
-        System.out.println("Surface area of square is " + (5 * 5));
+    public double getSurface() {
+        return side * side;
     }
 
-    public void giveCircumference() {
-        System.out.println("Circumference of square is " + (5 * 2 + 5 * 2));
+    @Override
+    public double getCircumference() {
+        return side * 4;
     }
-
 }
+
