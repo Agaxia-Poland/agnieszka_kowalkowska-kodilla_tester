@@ -103,7 +103,7 @@ class BankTestSuite {
 
         double paymentsAverage = bank.getPaymentsAverage();
 
-        Assertions.assertEquals(133.33333333333334, paymentsAverage);
+        Assertions.assertEquals(400.0/3, paymentsAverage, 0.01);
     }
 
     private CashMachine prepareCashMachine(double[] transactions) {
