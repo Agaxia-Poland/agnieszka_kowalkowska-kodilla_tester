@@ -17,8 +17,6 @@ public class InterfacesCar {
 
     private static void showCarDetails(Car car) {
         System.out.println(car.getSpeed());
-        System.out.println(car.getIncreaseSpeed());
-        System.out.println(car.getDecreaseSpeed());
 
     }
 
