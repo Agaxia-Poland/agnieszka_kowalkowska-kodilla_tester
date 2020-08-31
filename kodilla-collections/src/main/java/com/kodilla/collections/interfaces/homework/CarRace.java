@@ -23,7 +23,7 @@ public class CarRace {
         doRace(opel);
 
         Ford ford = new Ford();
-        ford.name = "Ford Focus";
+        ford.name = "Ford Fiesta";
 
         doRace(ford);
 
