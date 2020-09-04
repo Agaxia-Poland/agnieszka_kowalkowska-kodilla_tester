@@ -2,13 +2,9 @@ package com.kodilla.collections.interfaces.homework;
 
 public class Toyota implements Car {
     public String name;
-    private int speed = 60;
-    int value = 60;
-
-    @Override
-    public String getName() {
-        return name;
-    }
+    private int speed;
+    private static final int DECREASE_VALUE = 50;
+    private static final int INCREASE_VALUE = 60;
 
     @Override
     public int getSpeed() {
@@ -17,11 +13,11 @@ public class Toyota implements Car {
 
     @Override
     public void getIncreaseSpeed() {
-        speed = speed + value;
+        speed = speed + INCREASE_VALUE;
     }
 
     @Override
     public void getDecreaseSpeed() {
-        speed = speed - 10;
+        speed = speed - DECREASE_VALUE;
     }
 }

@@ -5,8 +5,6 @@ import java.util.Random;
 
 public class CarRace {
     public static void doRace(Car car) {
-        Random random = new Random();
-        int value = random.nextInt(50);
         car.getIncreaseSpeed();
         car.getIncreaseSpeed();
         car.getIncreaseSpeed();
