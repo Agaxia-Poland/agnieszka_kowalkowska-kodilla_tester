@@ -14,17 +14,6 @@ public class Task {
         this.deadline = deadline;
     }
 
-    public Task(String name, int i, int i1) {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public LocalDate getOpened() {
-        return opened;
-    }
-
     public LocalDate getDeadline() {
         return deadline;
     }
