@@ -5,12 +5,10 @@ import java.util.Objects;
 public class Principal {
     private String firstname;
     private String lastname;
-    private String schoolname;
 
     public Principal(String firstname, String lastname, String schoolname) {
         this.firstname = firstname;
         this.lastname = lastname;
-        this.schoolname = schoolname;
     }
 
     public String getFirstname() {
@@ -18,10 +16,6 @@ public class Principal {
     }
 
     public String getLastname() { return lastname; }
-
-    public String getSchoolname() {
-        return schoolname;
-    }
 
     @Override
     public String toString() {

@@ -23,7 +23,7 @@ public class SchoolDirectory {
         System.out.println(classes.get(ewa));
 
         for (Map.Entry<Principal, School> principalEntry : classes.entrySet())
-            System.out.println(principalEntry.getKey().getFirstname() + " " + principalEntry.getKey().getLastname() + ", school: " + principalEntry.getKey().getSchoolname() + ", sum of students: " + principalEntry.getValue().getNumbersOfStudentsInClasses());
+            System.out.println(principalEntry.getKey().getFirstname() + " " + principalEntry.getKey().getLastname() + ", sum of students: " + principalEntry.getValue().getNumbersOfStudentsInClasses());
     }
 }
 

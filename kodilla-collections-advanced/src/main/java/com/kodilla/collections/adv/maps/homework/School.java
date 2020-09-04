@@ -3,10 +3,6 @@ package com.kodilla.collections.adv.maps.homework;
 import java.util.ArrayList;
 import java.util.List;
 
-//Klasę School, która będzie reprezentowała szkołę,
-// a w niej pole (typu ArrayList), które będzie przechowywało listę liczb uczniów
-// w poszczególnych klasach.
-
 public class School {
     private List<Double> numbersOfStudentsInClasses = new ArrayList<>();
 
