@@ -1,26 +1,24 @@
 package com.kodilla.collections.adv.immutableSpecial.homework;
 
-public class BookManager extends Book {
+import java.util.ArrayList;
+import java.util.List;
 
-    public BookManager(String title, String author) {
-        super(title, author);
-    }
+public class BookManager {
+    private List<Book> books = new ArrayList<>();
 
     public void createBook(String title, String author) {
-        Book book = new Book("New Time", "Adam Peterson");
-        return;
+        System.out.println("createBook: "+title);
+        Book book = new Book(title, author);
+        if(!exists(book)) {
+            books.add(book);
+        }
     }
 
-    public static void main(String[] args) {
-        String a = "title: New Time, author Adam Peterson";
-        String b = "title: Old Time, author Peter Adamson";
-        String c = "title: New Time, author Adam Peterson";
-        System.out.println(a.equals(b));
-        System.out.println(a.equals(c));
-        System.out.println(a==b);
-        System.out.println(a==c);
-        System.out.println("-------------");
-
+    private boolean exists(Book book) {
+        return books.contains(book);
     }
 
+    public List<Book> getBooks() {
+        return books;
+    }
 }
