@@ -6,6 +6,18 @@ public class Ford implements Car {
     private static final int DECREASE_VALUE = 20;
     private static final int INCREASE_VALUE = 30;
 
+    public Ford(String name, int speed) {
+        this.name = name;
+        this.speed = speed;
+    }
+
+    public Ford() {
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
 
     @Override
     public int getSpeed() {
