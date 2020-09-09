@@ -1,8 +1,8 @@
 package com.kodilla.collections.adv.immutable.homework;
 
 public class Task {
-    protected final String title;
-    protected final int duration;
+    private final String title;
+    private final int duration;
 
     Task task = new Task("Write 2 new posts", 20);
 
