@@ -14,16 +14,8 @@ public class BookApplication {
         System.out.println(bookManager.getBooks().size());
 
 
-        Book b1 = new Book("Kompendium programisty.", "Jurek Jurek");
-        Book b2 = new Book("Kompendium programisty.", "Jurek Jurek");
-        System.out.println("Porównanie adresów: "+(b1 == b2));
-
-//        System.out.println("Porównanie adresów: "+(b1 == b2));
-//        System.out.println("Porównanie adresów: "+(b1.equals(b2)));
-//        System.out.println("Porównanie adresów: "+(b2.equals(b3)));
-//        System.out.println("Porównanie adresów: "+(b1.equals(b4)));
-//        System.out.println("Porównanie adresów: "+(b1.hashCode() == b4.hashCode()));
-//        System.out.println("Porównanie adresów: "+(b1.equals(new ImmutableSpecialCases())));
-
+        Book b1 = new Book ("Kompendium programisty.", "Jurek Jurek");
+        Book b2 = new Book ("Kompendium programisty.", "Jurek Jurek");
+        System.out.println("Porównanie adresów: " + (b1 == b2));
     }
 }

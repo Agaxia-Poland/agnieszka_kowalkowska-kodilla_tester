@@ -6,12 +6,13 @@ import java.util.List;
 public class BookManager {
     private List<Book> books = new ArrayList<>();
 
-    public void createBook(String title, String author) {
-        System.out.println("createBook: "+title);
+    public Book createBook(String title, String author) {
+        System.out.println("createBook: " + title);
         Book book = new Book(title, author);
-        if(!exists(book)) {
+        if (!exists(book)) {
             books.add(book);
         }
+        return book;
     }
 
     private boolean exists(Book book) {
