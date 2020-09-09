@@ -33,3 +33,4 @@ public class Flight {
         return Objects.hash(departure, arrival);
     }
 }
+
