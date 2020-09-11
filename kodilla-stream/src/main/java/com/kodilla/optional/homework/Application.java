@@ -1,23 +1,32 @@
 package com.kodilla.optional.homework;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class Application {
     public static void main(String[] args) {
-        List<Student> students = new ArrayList<>();
-        Student student = new Student("Student1", new Teacher("Teacher1"));
-        Student student1 = new Student("Student2", new Teacher("Teacher2"));
-        Student student3 = new Student("Student3", new Teacher(null));
-        Student student4 = new Student("Student4", new Teacher(null));
-        Student student5 = new Student("Student5", new Teacher("Teacher1"));
+        Map<Student, Teacher> students = new HashMap<>();
+        Student piotr = new Student("Piotr Nowak", "Anna Gadomska");
+        Student adam = new Student("Adam Nowak", "Mateusz Kowalski");
+        Student ewa = new Student("Ewa Kowalska", "Anna Gadomska");
 
+        Teacher piotrTeacher = new Teacher("Anna Gadomska");
+        Teacher adamTeacher = new Teacher("Mateusz Kowalski");
+        Teacher ewaTeacher = new Teacher("Anna Gadomska");
 
-        Optional<Student> optionalStudent = Optional.ofNullable(student);
+        students.put(piotr, piotrTeacher);
+        students.put(adam, adamTeacher);
+        students.put(ewa, ewaTeacher);
 
-        optionalStudent.ifPresent(u -> System.out.println(u.getName()));
+        System.out.println(students.get(piotr));
+        System.out.println(students.get(adam));
+        System.out.println(students.get(ewa));
 
-//        for each
+//        for (Map.Entry<Student, Teacher> studentEntry : students.entrySet()
+//        System.out.println(studentEntry.getKey().getName() + " " + studentEntry.getValue().getTeacher);
+//        )
+//
+//        Optional<Student> optionalStudent = Optional.ofNullable(student);
+//
+//        optionalStudent.ifPresent(u -> System.out.println(u.getName()));
     }
 }
