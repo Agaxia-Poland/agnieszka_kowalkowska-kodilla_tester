@@ -16,71 +16,54 @@ CREATE TABLE ISSUES
 
     INSERT INTO ISSUESLISTS (NAME)
 VALUES ("ToDo");
-COMMIT;
 
 INSERT INTO ISSUESLISTS (NAME)
 VALUES ("In progress");
-COMMIT;
 
 INSERT INTO ISSUESLISTS (NAME)
 VALUES ("Done");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (1, 1, "Write scheme", "Write point 1 and 2");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (1, 2, "Rewrite documents", "Rewrite point 1-10");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (1, 1, "Prepare ppt presentation", "Prepare 20 slides");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (1, 1, "Train presentation", "1 hour for repetition before meeting");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (1, 3, "Reserve room for presentation", "2 hours for meeting");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (2, 4, "Draw sketches for presentation", "3 hours for 5 sketches");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (2, 5, "Accept sketches for presentation", "5 sketches done in AdobeIllustrator");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (2, 3, "Order catering for meeting", "Drinks, lunch boxes");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (2, 3, "Order gadgets for meeting", "Pens, notebooks, bookmarks with company logo");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (2, 5, "Invite guests for presentation", "Send invitations to guests");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (3, 5, "List of guest", "Obtain acceptance of 2 bosses");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (3, 2, "Prepare agenda for meeting", "1 page, 15 points");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (3, 2, "List of interns for meeting", "5 interns");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (3, 2, "Entrance cards for interns", "Leave the information in lodge with permission to entrance for special cards");
-COMMIT;
 
 INSERT INTO ISSUES (ISSUESLIST_ID, USER_ID_ASSIGNEDTO, SUMMARY, DESCRIPTION)
 VALUES (3, 1, "Text for presentation", "Text on slides accepted by 2 bosses");
