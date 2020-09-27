@@ -9,11 +9,7 @@ public class ForumStats {
                 .map(u -> u.getAge())
                 .mapToInt(n -> n)
                 .average()
-                .getAsDouble();
+                .orElse(0);
         System.out.println(avg);
     }
 }
-//
-//    Napisz Stream tak, aby obliczył średnią liczbę postów dla użytkowników, których wiek jest >= 40.
-//
-//        Napisz kolejny Stream, który obliczy średnią liczbę postów dla użytkowników, których wiek jest < 40.
