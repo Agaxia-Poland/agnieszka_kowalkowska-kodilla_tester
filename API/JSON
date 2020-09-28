@@ -1,0 +1,28 @@
+{
+    "carname":"Aveo",
+    "brandname":"Chevrolet",
+    "fourseats":[
+
+        "firstseat":{
+            "textile":"spandex",
+			"colour":"black",
+        },
+
+		"secondseat":{
+            "textile":"spandex",
+			"colour":"black",
+        },
+
+		"thirdseat":{
+            "textile":"spandex",
+			"colour":"black",
+        },
+
+		"fourthseat":{
+            "textile":"spandex",
+			"colour":"black",
+        },
+    ]
+
+    "engine capacity"”":1.20
+}
