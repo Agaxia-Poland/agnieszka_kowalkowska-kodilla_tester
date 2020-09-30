@@ -9,7 +9,8 @@ public class Student {
         this.teacher = teacher;
     }
 
-    public Student() {
+    public Student(String name) {
+        this.name = name;
     }
 
     public String getName() {
