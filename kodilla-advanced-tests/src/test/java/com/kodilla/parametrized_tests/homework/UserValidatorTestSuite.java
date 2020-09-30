@@ -18,10 +18,15 @@ public class UserValidatorTestSuite {
         assertEquals(expected, validator.validateUsername(input));
     }
 
-    //TODO: implement
     @ParameterizedTest
-    @CsvSource(value = "^([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$")
-    public void shouldValidateEmail(String input, String expected) {
+    @CsvSource(value = {
+            "Ania1999@wp.pl,true",
+            "@xb,false",
+            "ania@wp,false",
+            "aa.com,false"
+
+    })
+    public void shouldValidateEmail(String input, boolean expected) {
         assertEquals(expected, validator.validateEmail(input));
     }
 }
