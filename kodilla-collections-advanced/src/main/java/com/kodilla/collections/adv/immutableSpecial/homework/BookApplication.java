@@ -14,8 +14,8 @@ public class BookApplication {
         System.out.println(bookManager.getBooks().size());
 
 
-        Book b1 = new Book ("Kompendium programisty.", "Jurek Jurek");
-        Book b2 = new Book ("Kompendium programisty.", "Jurek Jurek");
-        System.out.println("Porównanie adresów: " + (b1 == b2));
+        Book book1 = bookManager.createBook("Kompendium ...", "Jurek ...");
+        Book book2 = bookManager.createBook("Kompendium ...", "Jurek ...");
+        if (book1 == book2) { System.out.println("OK"); } else { System.out.println("Something went wrong");}
     }
 }
