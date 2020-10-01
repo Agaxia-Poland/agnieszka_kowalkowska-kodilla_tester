@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class WarehouseApp {
     public static void main(String[] args) {
+
         int numberOfOrder = Order.addOrder();
         System.out.println("Number of order: " + numberOfOrder);
     }
