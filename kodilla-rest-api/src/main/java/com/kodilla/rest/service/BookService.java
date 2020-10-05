@@ -20,4 +20,7 @@ class BookService {
     }
 
     public void remove (Object o) {books.remove(o); }
+
+    public Object addBook() {return books;}
+
 }
