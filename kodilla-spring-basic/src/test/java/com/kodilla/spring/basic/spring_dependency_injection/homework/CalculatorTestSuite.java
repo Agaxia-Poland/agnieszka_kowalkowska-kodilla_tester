@@ -4,7 +4,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class CalculatorTestSuite {
-//
+
 //    @Test
 //    public void shouldReturnCorrectSum() {
 //        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
