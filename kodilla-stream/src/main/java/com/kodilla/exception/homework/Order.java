@@ -1,7 +1,6 @@
 package com.kodilla.exception.homework;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Objects;
 
 public class Order {
     private String number;
@@ -12,20 +11,23 @@ public class Order {
         return this.number;
     }
 
-    private Map<String, Boolean> getOrder() {
-        Map<String, Boolean> orders = new HashMap<>();
-        orders.put("Order1", true);
-        orders.put("Order2", true);
-        orders.put("Order3", false);
-        orders.put("Order4", true);
-        return orders;
+    @Override
+    public String toString() {
+        return "Order{" +
+                "number='" + number + '\'' +
+                '}';
     }
 
-    public Object doesOrderExists(String order) throws OrderDoesntExistException {
-        if(getOrder().containsKey(order))
-            return getOrder().get(order);
-        throw new OrderDoesntExistException();
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return Objects.equals(number, order.number);
     }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(number);
+    }
 }

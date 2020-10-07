@@ -1,9 +1,10 @@
 package com.kodilla.exception;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 
-public class AirportRepositoryTestSuite extends TestCase {
+import static org.junit.Assert.assertTrue;
+
+public class AirportRepositoryTestSuite {
 
     @Test
     public void testIsAirportInUse() throws AirportNotFoundException {

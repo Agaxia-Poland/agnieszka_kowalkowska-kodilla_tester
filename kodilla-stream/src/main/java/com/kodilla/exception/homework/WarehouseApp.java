@@ -5,19 +5,21 @@ public class WarehouseApp {
         Order o1 = new Order("1");
         Order o2 = new Order("6");
         Order o3 = new Order("13");
-        Warehouse w1 = new Warehouse();
-        w1.addOrder(o1);
-        w1.addOrder(o2);
-        w1.addOrder(o3);
-        System.out.println(o2.getNumber());
+        Warehouse warehouse = new Warehouse();
+        warehouse.addOrder(o1);
+        warehouse.addOrder(o2);
+        warehouse.addOrder(o3);
+
+        processOrder("5", warehouse);
+        processOrder("13", warehouse);
+    }
+
+    private static void processOrder(String orderNumber, Warehouse warehouse) {
         try {
-            System.out.println(w1.getOrder(o1));
-        }
-        catch (OrderDoesntExistException e){
-            System.out.println("Empty list");
-        }
-        finally {
-            System.out.println("Other exception");
+            Order order = warehouse.getOrder(orderNumber);
+            System.out.println("Znaleziono zamówienie " + order);
+        } catch (OrderDoesntExistException e) {
+            System.out.println("Zamówienie z numerem " + orderNumber + " nie istnieje");
         }
     }
 }

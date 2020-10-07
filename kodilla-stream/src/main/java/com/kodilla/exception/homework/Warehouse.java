@@ -2,22 +2,18 @@ package com.kodilla.exception.homework;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Warehouse {
     public List<Order> orderList =  new ArrayList<>();
-    public Order addOrder(Order order){
+
+    public void addOrder(Order order){
         orderList.add(order);
-        return order;
-    }
-    public Stream<Order> getOrder(Order order) throws OrderDoesntExistException{
-        Stream<Order> stream1 = orderList.stream();
-        Stream<Order> streamFiltered = stream1.filter(n -> n.equals(addOrder(order)));
-        if(orderList.isEmpty()){
-            throw new OrderDoesntExistException();
-        }
-        return streamFiltered;
     }
 
+    public Order getOrder(String number) throws OrderDoesntExistException{
+        return orderList.stream()
+                .filter(order -> order.getNumber().equals(number))
+                .findFirst()
+                .orElseThrow(() -> new OrderDoesntExistException());
+    }
 }
-

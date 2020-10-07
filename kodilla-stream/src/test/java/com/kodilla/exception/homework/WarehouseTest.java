@@ -1,26 +1,38 @@
 package com.kodilla.exception.homework;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 
-public class WarehouseTest extends TestCase {
+import static org.junit.Assert.assertEquals;
+
+public class WarehouseTest {
     @Test
     public void testDoesOrderExists() throws OrderDoesntExistException {
         //given
-        Order order = new Order("Order3");
+        Warehouse warehouse = prepareWarehouse();
+        Order order = new Order("13");
         //when
-        boolean doesOrder3Exists = (boolean) order.doesOrderExists("Order3");
+        Order result = warehouse.getOrder(order.getNumber());
         //then
-        assertTrue(doesOrder3Exists);
+        assertEquals(order, result);
     }
 
     @Test(expected = OrderDoesntExistException.class)
     public void testDoesOrderExists_withException() throws OrderDoesntExistException {
         //given
-        Order order = new Order("Order1");
+        Warehouse warehouse = prepareWarehouse();
+        Order order = new Order("5");
         //when
-        boolean doesOrderExists = (boolean) order.doesOrderExists("Order1");
-        //then
-        assertTrue(doesOrderExists);
+        warehouse.getOrder(order.getNumber());
+    }
+
+    private Warehouse prepareWarehouse() {
+        Order o1 = new Order("1");
+        Order o2 = new Order("6");
+        Order o3 = new Order("13");
+        Warehouse warehouse = new Warehouse();
+        warehouse.addOrder(o1);
+        warehouse.addOrder(o2);
+        warehouse.addOrder(o3);
+        return warehouse;
     }
 }
