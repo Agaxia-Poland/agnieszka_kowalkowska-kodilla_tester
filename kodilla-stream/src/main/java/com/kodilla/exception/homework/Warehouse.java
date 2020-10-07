@@ -1,10 +1,11 @@
 package com.kodilla.exception.homework;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class Warehouse {
-    public ArrayList<Order> orderList =  new ArrayList<>();
+    public List<Order> orderList =  new ArrayList<>();
     public Order addOrder(Order order){
         orderList.add(order);
         return order;
