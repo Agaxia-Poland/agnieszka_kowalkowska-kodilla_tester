@@ -1,9 +1,13 @@
 package com.kodilla.spring.basic.dependency_injection.homework;
 
-public interface NotificationService {
+public class NotificationService {
 
-    void success(String address);
+    public String success(String address) {
+        return "Package delivered to: " + address;
+    }
 
-    void fail(String address);
+    public String fail(String address) {
+        return "Package not delivered to: " + address;
+    }
 }
 

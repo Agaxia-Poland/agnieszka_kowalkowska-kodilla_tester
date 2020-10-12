@@ -1,0 +1,23 @@
+package com.kodilla.spring.basic.dependency_injection.homework;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class ShippingCenterTestSuite {
+
+@Test
+public void shouldReturnCorrectMessage(){
+    ApplicationContextShippingCenter context = new AnnotationConfigApplicationContextShippingCenter("com.kodilla.spring.basic.spring_dependency_injection.homework");
+    ShippingCenter bean = context.getBean(ShippingCenter.class);
+    String message = bean.sendPackage("Słowackiego 20,Gdańsk, PL", 25.0);
+    Assertions.assertEquals("Package delivered to: Słowackiego 20,Gdańsk, PL", message);
+}
+
+@Test
+public void shouldReturnPackageNotDeliveredMessage(){
+     ApplicationContextShippingCenter context = new AnnotationConfigApplicationContextShippingCenter("com.kodilla.spring.basic.spring_dependency_injection.homework");
+     ShippingCenter bean = context.getBean(ShippingCenter.class);
+     String message = bean.sendPackage("Słowackiego 20,Gdańsk, PL", 33.0);
+     Assertions.assertEquals("Package not delivered to: Słowackiego 20,Gdańsk, PL", message);
+}
+}
