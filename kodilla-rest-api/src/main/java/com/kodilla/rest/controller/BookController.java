@@ -19,8 +19,9 @@ public BookController(BookService bookService) {
 @GetMapping
 public List<BookDto> getBooks() { return bookService.getBooks();}
 
-public List<BookDto> addBook(@RequestBody BookDto bookDto) {
-        bookService.addBook(bookDto);
-    return null;
-}
+public void addBook(@RequestBody BookDto bookDto) {
+        bookService.addBook(bookDto);}
+
+public void removeBook(@RequestBody BookDto bookDto) {
+    bookService.removeBook(bookDto);}
 }
