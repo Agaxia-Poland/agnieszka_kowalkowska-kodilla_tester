@@ -3,11 +3,11 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://www.kodilla.com">
 
-    <xs:element name="Aveo" type="xs:string"/>
-    <xs:element name = "Chevrolet" type="xs:string"/>
-    <xs:element name = '1.2' type="xs:decimal"/>
-    <xs:element name = '2007' type="xs:integer"/>
-    <xs:element name = "speed &lt; 60 &amp; &gt; 30" type="xs:string"/>
-    <pattern value = "&quot;|'This is rather city small car."/>
+    <xs:element name="carname" type="xs:string"/>
+    <xs:element name = "brandname" type="xs:string"/>
+    <xs:element name = "enginecapacity" type="xs:decimal"/>
+    <xs:element name = "yearofproduction" type="xs:integer"/>
+    <xs:element name = "optimumspeedinthecity" type="xs:string"/>
+    <xs:element name = "description" type="xs:string"/>
 
 </xs:schema>
