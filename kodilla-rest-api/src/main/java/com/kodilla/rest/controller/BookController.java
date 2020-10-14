@@ -14,14 +14,17 @@ private final BookService bookService;
 
 public BookController(BookService bookService) {
         this.bookService = bookService;
-    }
+}
 
 @GetMapping
 public List<BookDto> getBooks() { return bookService.getBooks();}
 
+@PostMapping
 public void addBook(@RequestBody BookDto bookDto) {
         bookService.addBook(bookDto);}
 
-public void removeBook(@RequestBody BookDto bookDto) {
-    bookService.removeBook(bookDto);}
+@PutMapping
+public void removeBook(BookDto bookDto) {
+    bookService.removeBook(bookDto);
+}
 }

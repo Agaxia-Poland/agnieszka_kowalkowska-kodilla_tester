@@ -3,6 +3,7 @@ package com.kodilla.rest.service;
 import com.kodilla.rest.domain.BookDto;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +17,10 @@ public class BookService {
     }
 
 @PostMapping
-    public void addBook (BookDto bookDto) {
+public void addBook (BookDto bookDto) {
         books.add(bookDto);
     }
 
-    public void removeBook (Object o) {books.remove(o); }
+@PutMapping
+public void removeBook (BookDto bookDto) {books.remove(bookDto); }
 }
