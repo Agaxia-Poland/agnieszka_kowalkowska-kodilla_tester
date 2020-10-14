@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.kodilla.com">
+
+    <xs:element name="carname" type="xs:string"/>
+    <xs:element name = "brandname" type="xs:string"/>
+    <xs:element name = "enginecapacity" type="xs:decimal"/>
+    <xs:element name = "yearofproduction" type="xs:integer"/>
+    <xs:element name = "optimumspeedinthecity" type="xs:string"/>
+    <xs:element name = "description" type="xs:string"/>
+
+</xs:schema>
