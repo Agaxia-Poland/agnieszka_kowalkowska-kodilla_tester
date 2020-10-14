@@ -1,67 +1,80 @@
-//package com.kodilla.parametrized_tests.homework;
-//
-//import org.junit.jupiter.api.Assertions;
-//import org.junit.jupiter.api.Test;
-//import org.junit.jupiter.params.ParameterizedTest;
-//import org.junit.jupiter.params.provider.CsvFileSource;
-//
-//import java.util.Collections;
-//import java.util.HashSet;
-//import java.util.Set;
-//
-//public class GamblingMachineTestSuite {
-//
-//    @ParameterizedTest
-//    @CsvFileSource(resources = "/GoodNumbers.csv")
-//    public void shouldCheckWinsWorks(int value1, int value2, int value3, int value4, int value5, int value6)
-//            throws InvalidNumbersException {
-//        GamblingMachine gamblingMachine = new GamblingMachine();
-//        Set<Integer> set = new HashSet<>();
-//        set.add(value1);
-//        set.add(value2);
-//        set.add(value3);
-//        set.add(value4);
-//        set.add(value5);
-//        set.add(value6);
-//        int x = gamblingMachine.howManyWins(set);
-//        Assertions.assertTrue(x <= 6);
-//        Assertions.assertTrue(x >= 0);
-//    }
-//
-//    @ParameterizedTest
-//    @CsvFileSource(resources = "/WrongNumbers.csv")
-//
-//    public void shouldErrorIfAddBadValuesOnlyNumbers(int value1, int value2, int value3, int value4, int value5, int value6) {
-//        GamblingMachine gamblingMachine = new GamblingMachine();
-//        Set<Integer> set = new HashSet<>();
-//        set.add(value1);
-//        set.add(value2);
-//        set.add(value3);
-//        set.add(value4);
-//        set.add(value5);
-//        set.add(value6);
-//        Assertions.assertThrows(InvalidNumbersException.class, () -> {
-//            gamblingMachine.howManyWins(set);
-//        });
-//
-//    }
-//
-//    @Test
-//    public void shouldErrorIfAddOneGoodValue() {
-//        GamblingMachine gamblingMachine = new GamblingMachine();
-//        Set<Integer> set = new HashSet<>();
-//        set.add(5);
-//        Assertions.assertThrows(InvalidNumbersException.class, () -> {
-//            gamblingMachine.howManyWins(set);
-//        });
-//    }
-//
-//    @Test
-//    public void shouldComputerAddGoodValues()  {
-//        GamblingMachine gamblingMachine = new GamblingMachine();
-//        Set<Integer> set = gamblingMachine.getGenerateComputerNumbers();
-//        Assertions.assertEquals(6, set.size());
-//        Assertions.assertTrue(Collections.max(set) <= 50);
-//        Assertions.assertTrue(Collections.min(set) > 0);
-//    }
-//}
+package com.kodilla.parametrized_tests.homework;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class GamblingMachineTestSuite {
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/GoodNumbers.csv")
+    public void shouldCheckWinsWork(String numbers) throws InvalidNumbersException {
+        String[] parsedNumbers = numbers.split("4,9,43,25,37,38");
+        Set numbersInt = new HashSet<>();
+        for (String number : parsedNumbers) {
+            numbersInt.add(Integer.valueOf(number));
+
+            GamblingMachine gamblingMachine = new GamblingMachine();
+            Set<Integer> set = new HashSet<>();
+            set.add(4);
+            set.add(9);
+            set.add(43);
+            set.add(25);
+            set.add(37);
+            set.add(38);
+            int result = gamblingMachine.howManyWins(numbersInt);
+            Assertions.assertTrue(result <= 6);
+            Assertions.assertTrue(result >= 0);
+        }
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/WrongNumbers.csv")
+    public void shouldErrorIfAddBadValuesOnlyNumbers(String numbers) {
+        String[] intWrongNumbers = numbers.split(" ,1,2,68,-1,3,5,7,9,0");
+        Set numbersIntWrong = new HashSet<>();
+        for (String number : intWrongNumbers) {
+            numbersIntWrong.add(Integer.valueOf(number));
+
+            GamblingMachine gamblingMachine = new GamblingMachine();
+            Set<Integer> set = new HashSet<>();
+            set.add(null);
+            set.add(1);
+            set.add(2);
+            set.add(68);
+            set.add(-1);
+            set.add(3);
+            set.add(5);
+            set.add(9);
+            set.add(0);
+            Assertions.assertThrows(InvalidNumbersException.class, () -> {
+                gamblingMachine.howManyWins(numbersIntWrong);
+            });
+        }
+    }
+
+    @Test
+    public void shouldErrorIfAddOneGoodValue() {
+        GamblingMachine gamblingMachine = new GamblingMachine();
+        Set<Integer> set = new HashSet<>();
+        set.add(5);
+        Assertions.assertThrows(InvalidNumbersException.class, () -> {
+            gamblingMachine.howManyWins(set);
+        });
+    }
+
+    @Test
+    public void shouldComputerAddGoodValues() {
+        GamblingMachine gamblingMachine = new GamblingMachine();
+        Set<Integer> set = gamblingMachine.getGenerateComputerNumbers();
+        Assertions.assertEquals(6, set.size());
+        assertTrue(Collections.max(set) <= 50);
+        assertTrue(Collections.min(set) > 0);
+    }
+}
