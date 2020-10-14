@@ -17,7 +17,7 @@ public void shouldReturnCorrectCarWithCorrectLightSetDependingOnCurrentSeason(){
     int hour = LocalTime.now().getHour();
 
     Car car = (Car) context.getBean("selectCar");
-    System.out.println("Returned car : " + car.getCarType() + ", lights on: " + car.hasHeadlightsTurnedOn() );
+    System.out.println("Returned car : " + car.getCarType() + ", lights on: " + car.hasHeadlightsTurnedOn());
     if(season.equals("Summer")) {
         Assertions.assertEquals("Cabrio", car.getCarType());
     } else if ( season.equals("Winter")){
@@ -27,7 +27,7 @@ public void shouldReturnCorrectCarWithCorrectLightSetDependingOnCurrentSeason(){
     }
 
     if(hour >=20 || hour <= 6){
-        Assertions.assertTrue( car.hasHeadlightsTurnedOn());
+        Assertions.assertTrue(car.hasHeadlightsTurnedOn());
     } else {
         Assertions.assertFalse(car.hasHeadlightsTurnedOn());
     }
