@@ -3,56 +3,62 @@ package seasonchecker;
 import io.cucumber.java8.En;
 import org.junit.Assert;
 
-import java.time.MonthDay;
-
 public class IsFizzOrBuzzSteps implements En {
-    private MonthDay today;
+    private int number;
     private String answer;
 
     public IsFizzOrBuzzSteps() {
-        Given("today is last day of December", () -> {
-            this.today = MonthDay.of(12, 31);
+        Given("the number is 3", () -> {
+            this.number = 3;
         });
 
-        Given("today is first day of August", () -> {
-            this.today = MonthDay.of(9, 1);
+        Given("the number is 6", () -> {
+            this.number = 6;
         });
 
-        Given("today is second day of January", () -> {
-            this.today = MonthDay.of(1, 2);
+        Given("the number is 9", () -> {
+            this.number = 9;
         });
 
-        Given("today is 10th day of February", () -> {
-            this.today = MonthDay.of(2, 10);
+        Given("the number is 5", () -> {
+            this.number = 5;
         });
 
-        Given("today is 20th day of June", () -> {
-            this.today = MonthDay.of(6, 20);
+        Given("the number is 50", () -> {
+            this.number = 50;
         });
 
-        Given("today is 5th day of May", () -> {
-            this.today = MonthDay.of(5, 5);
+        Given("the number is 25", () -> {
+            this.number = 25;
         });
 
-        Given("today is 24th day of September", () -> {
-            this.today = MonthDay.of(9, 24);
+        Given("the number is 15", () -> {
+            this.number = 15;
         });
 
-        Given("today is 21th day of June", () -> {
-            this.today = MonthDay.of(6, 21);
+        Given("the number is 30", () -> {
+            this.number = 30;
         });
 
-        Given("today is 23th day of August", () -> {
-            this.today = MonthDay.of(8, 24);
+        Given("the number is 60", () -> {
+            this.number = 60;
         });
 
-        When("I ask whether it's Summer", () -> {
-            SeasonChecker seasonChecker = new SeasonChecker();
-            this.answer = seasonChecker.checkIfSummer(this.today);
+        Given("the number is 123", () -> {
+            this.number = 123;
         });
 
-        Then("I should be told {string}", (String string) -> {
-            Assert.assertEquals(string, this.answer);
+        Given("the number is 1", () -> {
+            this.number = 1;
+        });
+
+        When("I ask for the right word to the given number", () -> {
+            NumberChecker numberChecker = new NumberChecker();
+            this.answer = numberChecker.checkIfNumber(this.number);
+        });
+
+        Then("You should say {string}", (String answer) -> {
+            Assert.assertEquals(answer, this.answer);
         });
     }
 }
