@@ -5,8 +5,8 @@ import com.kodilla.spring.basic.dependency_injection.Component;
 @Component
 public class ShippingCenter {
 
-    DeliveryService deliveryService;
-    NotificationService notificationService;
+    private final DeliveryService deliveryService;
+    private NotificationService notificationService;
 
     public ShippingCenter(DeliveryService deliveryService, NotificationService notificationService) {
         this.deliveryService = deliveryService;
