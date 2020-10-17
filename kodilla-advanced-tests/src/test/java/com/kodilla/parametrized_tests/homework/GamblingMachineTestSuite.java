@@ -15,7 +15,7 @@ public class GamblingMachineTestSuite {
     @ParameterizedTest
     @CsvFileSource(resources = "/GoodNumbers.csv")
     public void shouldCheckWinsWork(String numbers) throws InvalidNumbersException {
-        String[] parsedNumbers = numbers.split("4,9,43,25,37,38");
+        String[] parsedNumbers = numbers.split(",");
         Set numbersInt = new HashSet<>();
         for (String number : parsedNumbers) {
             numbersInt.add(Integer.valueOf(number));
@@ -37,7 +37,7 @@ public class GamblingMachineTestSuite {
     @ParameterizedTest
     @CsvFileSource(resources = "/WrongNumbers.csv")
     public void shouldErrorIfAddBadValuesOnlyNumbers(String numbers) {
-        String[] intWrongNumbers = numbers.split(" ,1,2,68,-1,3,5,7,9,0");
+        String[] intWrongNumbers = numbers.split(",");
         Set numbersIntWrong = new HashSet<>();
         for (String number : intWrongNumbers) {
             numbersIntWrong.add(Integer.valueOf(number));
