@@ -22,4 +22,9 @@ public Animal randomAnimal() {
     }
     return animal;
     }
+
+@Bean
+public Dog createDog() {
+    return new Dog();
+}
 }
