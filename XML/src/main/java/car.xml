@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<car xmlns:html="http://www.w3.org/1999/xhtml">
+        <carname>"Aveo"</carname>
+        <brandname> Chevrolet</brandname>
+        <enginecapacity>1.2</enginecapacity>
+        <yearofproduction>2007</yearofproduction>
+        <optimumspeedinthecity> speed &lt; 60 &amp; &gt; 30 </optimumspeedinthecity>
+        <description>&amp;quot This is rather city small car.&amp;quot </description>
+
+</car>
