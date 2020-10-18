@@ -17,3 +17,6 @@ include 'bash'
 include 'kodilla-docker'
 include 'kodilla-selenium'
 include 'kodilla-cucumber'
+include 'kodilla-docker'
+include 'kodilla-google-selenium'
+
