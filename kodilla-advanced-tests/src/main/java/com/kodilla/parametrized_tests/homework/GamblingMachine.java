@@ -31,9 +31,15 @@ public class GamblingMachine {
     private Set<Integer> generateComputerNumbers() {
         Set<Integer> numbers = new HashSet<>();
         Random generator = new Random();
-        while(numbers.size() < 6) {
+        while (numbers.size() < 6) {
             numbers.add(generator.nextInt(49) + 1);
         }
         return numbers;
     }
+
+    public Set<Integer> getGenerateComputerNumbers(){
+        return generateComputerNumbers();
+    }
+
 }
+
