@@ -17,21 +17,14 @@ public class GamblingMachineTestSuite {
     public void shouldCheckWinsWork(String numbers) throws InvalidNumbersException {
         String[] parsedNumbers = numbers.split(",");
         Set numbersInt = new HashSet<>();
+        GamblingMachine gamblingMachine = new GamblingMachine();
         for (String number : parsedNumbers) {
             numbersInt.add(Integer.valueOf(number));
-
-            GamblingMachine gamblingMachine = new GamblingMachine();
-            Set<Integer> set = new HashSet<>();
-            set.add(4);
-            set.add(9);
-            set.add(43);
-            set.add(25);
-            set.add(37);
-            set.add(38);
             int result = gamblingMachine.howManyWins(numbersInt);
             Assertions.assertTrue(result <= 6);
             Assertions.assertTrue(result >= 0);
         }
+
     }
 
     @ParameterizedTest
@@ -39,20 +32,9 @@ public class GamblingMachineTestSuite {
     public void shouldErrorIfAddBadValuesOnlyNumbers(String numbers) {
         String[] intWrongNumbers = numbers.split(",");
         Set numbersIntWrong = new HashSet<>();
+        GamblingMachine gamblingMachine = new GamblingMachine();
         for (String number : intWrongNumbers) {
             numbersIntWrong.add(Integer.valueOf(number));
-
-            GamblingMachine gamblingMachine = new GamblingMachine();
-            Set<Integer> set = new HashSet<>();
-            set.add(null);
-            set.add(1);
-            set.add(2);
-            set.add(68);
-            set.add(-1);
-            set.add(3);
-            set.add(5);
-            set.add(9);
-            set.add(0);
             Assertions.assertThrows(InvalidNumbersException.class, () -> {
                 gamblingMachine.howManyWins(numbersIntWrong);
             });
