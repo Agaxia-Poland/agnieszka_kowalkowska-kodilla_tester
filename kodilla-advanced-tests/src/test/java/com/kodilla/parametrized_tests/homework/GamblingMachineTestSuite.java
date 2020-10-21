@@ -15,30 +15,29 @@ public class GamblingMachineTestSuite {
     @ParameterizedTest
     @CsvFileSource(resources = "/GoodNumbers.csv")
     public void shouldCheckWinsWork(String numbers) throws InvalidNumbersException {
-        String[] parsedNumbers = numbers.split(",");
-        Set numbersInt = new HashSet<>();
+        String[] parsedNumbers = numbers.split(" ");
+        Set<Integer> numbersInt = new HashSet<>();
         GamblingMachine gamblingMachine = new GamblingMachine();
         for (String number : parsedNumbers) {
             numbersInt.add(Integer.valueOf(number));
-            int result = gamblingMachine.howManyWins(numbersInt);
-            Assertions.assertTrue(result <= 6);
-            Assertions.assertTrue(result >= 0);
         }
-
+        int result = gamblingMachine.howManyWins(numbersInt);
+        Assertions.assertTrue(result <= 6);
+        Assertions.assertTrue(result >= 0);
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/WrongNumbers.csv")
     public void shouldErrorIfAddBadValuesOnlyNumbers(String numbers) {
-        String[] intWrongNumbers = numbers.split(",");
-        Set numbersIntWrong = new HashSet<>();
+        String[] intWrongNumbers = numbers.split(" ");
+        Set<Integer> numbersIntWrong = new HashSet<>();
         GamblingMachine gamblingMachine = new GamblingMachine();
         for (String number : intWrongNumbers) {
             numbersIntWrong.add(Integer.valueOf(number));
-            Assertions.assertThrows(InvalidNumbersException.class, () -> {
-                gamblingMachine.howManyWins(numbersIntWrong);
-            });
         }
+        Assertions.assertThrows(InvalidNumbersException.class, () -> {
+            gamblingMachine.howManyWins(numbersIntWrong);
+        });
     }
 
     @Test
