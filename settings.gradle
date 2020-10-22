@@ -19,3 +19,6 @@ include 'kodilla-cucumber'
 include 'kodilla-cucumber-homework'
 include 'kodilla-selenium'
 include 'kodilla-cucumber'
+include 'kodilla-docker'
+include 'kodilla-google-selenium'
+
